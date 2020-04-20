@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Covend -- Covid-19 Rapid Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+  <link href="css/jcarousel.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+  <link href="css/flexslider.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- Theme skin -->
+  <link href="skins/default.css" rel="stylesheet" />
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+  <link rel="shortcut icon" href="ico/favicon.png" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- start header -->
+    <header>
+      <div class="container ">
+        <!-- hidden top area toggle link -->
+        <div id="header-hidden-link">
+        </div>
+        <!-- end toggle link -->
+        <div class="row nomargin">
+          <div class="span12">
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="my-0 mr-md-auto font-weight-normal">
+            <div class="logo">
+              <a href="index.html"><img src="img/logo.png" alt="" class="logo" /></a>
+            </div>
+          </div>
+          <div class="my-2 my-md-0 mr-md-3">
+            <div class="navbar navbar-static-top">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav topnav">
+                    <li class="dropdown">
+                      <a href="index.html">HOME</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="form.html">UPLOAD </br>RESULTS</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="products.html">PRODUCT INFORMATION</a>
+                    </li>
+					<li>
+                      <a href="info.html">STATISTICS</a>
+                    </li>
+
+                    <li class="dropdown">
+                      <a href="news.html">NEWS</a>
+                    </li>
+                    <li>
+                      <a href="about.html">ABOUT US</a>
+                    </li>
+                    <li>
+                      <a href="contact.html">CONTACT US</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- end navigation -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+	<section>
+		<div class="container">
+			<div class="py-5 text-center">
+				<h2>Submit Test Results</h2>
+
+			</div>
+			
+		<div class="row justify-content-between">
+				<div class="col-md-6">
+				<div class="alert alert-block alert-info text-center" id="response"></div>
+					  <form  id="myForm" class="needs-validation" novalidate=""  method="POST" >
+						  <div class="mb-3">
+							<label for="firstName">Kit ID</label>
+							<input type="text" class="form-control" required name="kitID"  id="kitID" placeholder="" value="" >
+							<div class="invalid-feedback">
+							  Enter valid Kit ID please.
+							</div>
+						  </div>
+
+
+						<div class="mb-3">
+						  <label for="age">Age </label>
+						  <input type="text" class="form-control" required name="age" id="age" placeholder="Age">
+						  
+						</div>
+
+			
+
+						<div class="row">
+						  <div class="col-md-5 mb-3">
+							<label for="gender">Gender</label>
+							<select class="custom-select d-block w-100" name="gender" id="gender" >
+							  <option value="">Select Gender</option>
+							  <option>Male</option>
+							  <option>Female</option>
+							  <option>Other</option>
+							</select>
+							<div class="invalid-feedback">
+							  Please select a valid gender
+							</div>
+						  </div>
+						  <div class="col-md-4 mb-3">
+							<label for="ethnic">Ethnicity</label>
+							<select class="custom-select d-block w-100"  required name="ethnicity"  id="ethnicity" >
+							  <option value="">Select Ethnicity</option>
+							  <option>Asian</option>
+							  <option>Indian</option>
+							  <option>African American</option>
+							  <option>White</option>
+							  <option>Pakistani</option>
+							  <option>Hispanic</option>
+							  <option>African</option>
+							  <option>Arabic</option>
+							  <option>Other Ethnic Group</option>
+							</select>
+							<div class="invalid-feedback">
+							  Please enter a valid ethnicity.
+							</div>
+						  </div>
+						  
+						</div>
+
+						<div class="mb-3">
+						  <label for="height">Height </label>
+						  <input type="text" class="form-control" id="height"   required name="height"   placeholder="Height (cm)">
+						  
+						</div>
+						<div class="mb-3">
+						  <label for="weight">Weight </label>
+						  <input type="text" class="form-control" id="weight"   required name="weight"   placeholder="Weight (kg)">
+						  
+						</div>
+					
+						<div class="mb-3">
+							<label for="last_health_check">Health Check</label>
+							<select class="custom-select d-block w-100" id="last_health_check"   required name="last_health_check"  >
+							  <option value="">Last Health Check</option>
+							  <option  value="one month">Within the last month</option>
+							  <option  value="3 months">Within the last 3 months</option>
+							  <option  value="6 months">Within the last 6 months</option>
+							  <option  value="8 months">Within the last 8 months</option>
+							  <option  value="12 months">Over one year</option>
+							</select>
+							<div class="invalid-feedback">
+							  Please enter a valid health check.
+							</div>
+						</div>
+						
+						
+						<div class="mb-3">
+							<label for="test_reason">Symptoms</label>
+								
+							<div class="multiselect">
+								<div class="selectBox" onclick="showCheckboxes()">
+								  <select class="" id="test_reason" required name="test_reason"  multiple>
+									<option value="">Select an option</option>
+									<option value="cough">Cough</option>
+									<option value="temperature">Temperature</option>
+									<option value="breathing">Breathing Difficulties</option>
+									<option value="nothing">No Symptoms - Just wanted to be tested</option>
+									<option value="others">Others</option>
+								  </select>
+								  
+								</div>
+							  </div>
+						
+						</div>
+						
+						
+						<div class="mb-3">
+							<label for="medical_condition">Underlying Medical Conditions</label>
+								
+							<div class="multiselect">
+								<div class="selectBox">
+								  <select class="" id="medical_condition" required name="medical_condition" multiple>
+									<option value="">Select one or more</option>
+									<option value="Hypertension">Hypertension</option>
+									<option value="Asthma">Asthma</option>
+									<option value="Osteoarthritis">Osteoarthritis</option>
+									<option value="Osteoporosis">Osteoporosis</option>
+									<option value="Rheumatoid">Rheumatoid arthritis</option>
+									<option value="Coronary">Coronary heart disease</option>
+									<option value="sclerosis">Multiple sclerosis</option>
+									<option value="Diabetes">Diabetes</option>
+									<option value="Cancer">Cancer</option>
+									<option value="Hearing">Hearing loss</option>
+									<option value="Sight">Sight loss</option>
+									<option value="Rosacea">Rosacea</option>
+									<option value="COPD">COPD</option>
+									<option value="Chronic">Chronic Kidney Disease</option>
+									<option value="Stroke">Stroke</option>
+									<option value="Parkinson">Parkinson's Disease</option>
+									<option value="Epilepsy">Epilepsy</option>
+									<option value="Cholesterol">Cholesterol</option>
+									<option value="Ulcerative">Ulcerative colitis</option>
+									<option value="Eczema">Eczema</option>
+									<option value="Psoriasis">Psoriasis</option>
+									<option value="Sinusitis">Sinusitis</option>
+									<option value="Underactive">Underactive thyroid</option>
+									<option value="Overactive">Overactive thyroid</option>
+									<option value="Lupus">Lupus</option>
+									<option value="IBS">IBS</option>
+									<option value="Gout">Gout</option>
+									<option value="Allergies">Allergies</option>
+								  </select>
+								  
+								</div>
+							  </div>
+						
+						</div>
+						
+
+						
+						
+						<div class="mb-3">
+							<label for="status">Result</label>
+							<select class="custom-select d-block w-100" required name="status" id="status" >
+							  <option value="">Last Health Check</option>
+							  <option>Positive</option>
+							  <option>Negative</option>
+							  <option>Invalid</option>
+							</select>
+						</div>
+						
+						
+						<div class="mb-3">
+						  <label for="igm">IgM or IgG (if positive)</label>
+							<select class="custom-select d-block w-100" required name="igm" id="igm">
+							  <option value="">Select if result positive</option>
+							  <option value="IgM">IgM only</option>
+							  <option value="IgG">IgG only</option>
+							  <option value="both">IgM & IgG</option>
+							</select>
+						</div>
+						
+						<input  type="submit" class="btn btn-primary btn-lg btn-block" id="submission" onClick="myFunction()" value="Submit">
+						
+					  </form>
+					</div>
+							
+			</div>
+		</div>
+	</section>
+  		
+    <footer>
+
+      <div class="container">
+        <div class="row">
+         
+          <div class="spanget">
+            <div class="widget get">
+              <h5 class="widgetheading">Get in touch with us</h5>
+              <!-- <address><strong>Company, Ltd</strong><br>
+								 Street Name, Park Ave <br>
+								 Dhaka 1207, Bangladesh</address>
+            
+			
+                <i class="icon-phone"></i> (123) 000-0000 - (000) 000-0001 <br> -->
+				<p>
+					<i class="icon-envelope-alt"></i> info@covend.ie
+				</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sub-footer">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="">
+              <div class="copyright">
+                <p>
+                  <span>&copy; COVID-19, The Coronavirus</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
+  <!-- javascript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  
+
+  <!-- Template Custom JavaScript File -->
+  <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  
+ 
+  
+  <script>
+  $(document).ready(function () {
+  $("#test_reason").CreateMultiCheckBox({ width: '230px',
+             defaultText : 'Select Below', height:'250px' });
+});
+
+ $(document).ready(function () {
+  $("#medical_condition").CreateMultiCheckBox({ width: '230px',
+             defaultText : 'Select Below', height:'250px' });
+});
+
+  
+  </script>
+  
+  <script>
+
+
+
+        $(document).ready(function () {
+            $(document).on("click", ".MultiCheckBox", function () {
+                var detail = $(this).next();
+                detail.show();
+            });
+
+            $(document).on("click", ".MultiCheckBoxDetailHeader input", function (e) {
+                e.stopPropagation();
+                var hc = $(this).prop("checked");
+                $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", hc);
+                $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+            });
+
+            $(document).on("click", ".MultiCheckBoxDetailHeader", function (e) {
+                var inp = $(this).find("input");
+                var chk = inp.prop("checked");
+                inp.prop("checked", !chk);
+                $(this).closest(".MultiCheckBoxDetail").find(".MultiCheckBoxDetailBody input").prop("checked", !chk);
+                $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+            });
+
+            $(document).on("click", ".MultiCheckBoxDetail .cont input", function (e) {
+                e.stopPropagation();
+                $(this).closest(".MultiCheckBoxDetail").next().UpdateSelect();
+
+                var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
+                $(".MultiCheckBoxDetailHeader input").prop("checked", val);
+            });
+
+            $(document).on("click", ".MultiCheckBoxDetail .cont", function (e) {
+                var inp = $(this).find("input");
+                var chk = inp.prop("checked");
+                inp.prop("checked", !chk);
+
+                var multiCheckBoxDetail = $(this).closest(".MultiCheckBoxDetail");
+                var multiCheckBoxDetailBody = $(this).closest(".MultiCheckBoxDetailBody");
+                multiCheckBoxDetail.next().UpdateSelect();
+
+                var val = ($(".MultiCheckBoxDetailBody input:checked").length == $(".MultiCheckBoxDetailBody input").length)
+                $(".MultiCheckBoxDetailHeader input").prop("checked", val);
+            });
+
+            $(document).mouseup(function (e) {
+                var container = $(".MultiCheckBoxDetail");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.hide();
+                }
+            });
+        });
+
+        var defaultMultiCheckBoxOption = { width: '220px', defaultText: 'Select Below', height: '200px' };
+
+        jQuery.fn.extend({
+            CreateMultiCheckBox: function (options) {
+
+                var localOption = {};
+                localOption.width = (options != null && options.width != null && options.width != undefined) ? options.width : defaultMultiCheckBoxOption.width;
+                localOption.defaultText = (options != null && options.defaultText != null && options.defaultText != undefined) ? options.defaultText : defaultMultiCheckBoxOption.defaultText;
+                localOption.height = (options != null && options.height != null && options.height != undefined) ? options.height : defaultMultiCheckBoxOption.height;
+
+                this.hide();
+                this.attr("multiple", "multiple");
+                var divSel = $("<div class='MultiCheckBox'>" + localOption.defaultText + "<span class='k-icon k-i-arrow-60-down'><svg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='sort-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' class='svg-inline--fa fa-sort-down fa-w-10 fa-2x'><path fill='currentColor' d='M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z' class=''></path></svg></span></div>").insertBefore(this);
+                divSel.css({ "width": localOption.width });
+
+                var detail = $("<div class='MultiCheckBoxDetail'><div class='MultiCheckBoxDetailHeader'><input type='checkbox' class='mulinput' value='-1982' /><div>Select All</div></div><div class='MultiCheckBoxDetailBody'></div></div>").insertAfter(divSel);
+                detail.css({ "width": parseInt(options.width) + 10, "max-height": localOption.height });
+                var multiCheckBoxDetailBody = detail.find(".MultiCheckBoxDetailBody");
+
+                this.find("option").each(function () {
+                    var val = $(this).attr("value");
+
+                    if (val == undefined)
+                        val = '';
+
+                    multiCheckBoxDetailBody.append("<div class='cont'><div><input type='checkbox' class='mulinput' value='" + val + "' /></div><div>" + $(this).text() + "</div></div>");
+                });
+
+                multiCheckBoxDetailBody.css("max-height", (parseInt($(".MultiCheckBoxDetail").css("max-height")) - 28) + "px");
+            },
+            UpdateSelect: function () {
+                var arr = [];
+
+                this.prev().find(".mulinput:checked").each(function () {
+                    arr.push($(this).val());
+                });
+
+                this.val(arr);
+            },
+        });
+
+  </script>
+	
+  <script>
+
+
+function myFunction() {
+  document.getElementById("submission").value = "The Form is Submitted!";
+}
+</script>
+<script>
+				$(document).ready(function () {
+					$("#myForm").submit(function (event) {
+						event.preventDefault()
+						
+						var kitID = document.getElementById("kitID").value
+						var age = document.getElementById("age").value
+						var gender = document.getElementById("gender").value
+						var ethnicity = document.getElementById("ethnicity").value
+						var height = document.getElementById("height").value
+						var weight = document.getElementById("weight").value
+						var last_health_check = document.getElementById("last_health_check").value
+						var test_reason = document.getElementById("test_reason").value
+						var medical_condition = document.getElementById("medical_condition").value
+						var status = document.getElementById("status").value
+						var igm = document.getElementById("igm").value
+						
+						
+						
+						
+						$.post("http://192.168.1.5:8000/kit/web/kit/", {kitID:kitID, age:age, gender:gender, ethnicity:ethnicity, height:height, weight:weight, last_health_check:last_health_check, test_reason:test_reason, medical_condition:medical_condition, statuss:status, igm:igm}, function (data) {
+							console.log(data);
+							document.getElementById("response").innerHTML = data;
+						})
+					}) 
+				})
+			</script>
+  
+
+</body>
+</html>
