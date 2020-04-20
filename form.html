@@ -454,7 +454,7 @@ function myFunction() {
 						
 						
 						
-						$.post("http://192.168.1.5:8000/kit/web/kit/", {kitID:kitID, age:age, gender:gender, ethnicity:ethnicity, height:height, weight:weight, last_health_check:last_health_check, test_reason:test_reason, medical_condition:medical_condition, statuss:status, igm:igm}, function (data) {
+						$.post("http://18.217.127.10:9000/kit/web/kit/", {kitID:kitID, age:age, gender:gender, ethnicity:ethnicity, height:height, weight:weight, last_health_check:last_health_check, test_reason:test_reason, medical_condition:medical_condition, statuss:status, igm:igm}, function (data) {
 							console.log(data);
 							document.getElementById("response").innerHTML = data;
 						})
